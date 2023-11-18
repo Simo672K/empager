@@ -1,6 +1,9 @@
-function SideBarNav({children}:{children: React.ReactNode}) {
+import { BasicExtensibleUiWidget } from "../../utils/types"
+
+function SideBarNav({children, className}:BasicExtensibleUiWidget) {
+  console.log(className);
   return (
-    <ul>{children}</ul>
+    <ul className={className||''}>{children}</ul>
   )
 }
 export default SideBarNav

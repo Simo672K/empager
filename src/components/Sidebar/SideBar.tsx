@@ -1,7 +1,7 @@
 import SideBarNav from "./SideBarNav"
 import SideBarNavLink from "./SideBarNavLink"
 import SideBarSectionTitle from "./SideBarSectionTitle"
-import { RiLayoutLeftLine, RiSettings5Line, RiLogoutBoxRLine/*, RiTimerLine*/, RiListCheck, RiArchiveLine,RiAddLine } from 'react-icons/ri'
+import { RiLayoutLeftLine, RiSettings5Line, RiLogoutBoxRLine/*, RiTimerLine*/, RiShakeHandsLine, RiArchiveLine,RiAddLine } from 'react-icons/ri'
 import {HiOutlineDocumentReport,HiOutlineUsers} from 'react-icons/hi'
 import GroupBtn from "../Button/GroupBtn"
 import Button from "../Button/Button"
@@ -10,7 +10,7 @@ import SidebarDropdown from "./SidebarDropdown"
 
 function SideBar() {
   return (
-    <aside className="max-w-md bg-[#F0F0F0] px-8 py-4">
+    <aside className="max-w-md bg-[#F0F0F0] px-8 py-4 flex flex-col">
       <h2 className="text-xl font-bold">Empager</h2>
       <GroupBtn className="mt-8">
         <Button variant="primary">
@@ -38,18 +38,22 @@ function SideBar() {
           My Time
         </SideBarNavLink> */}
         <SideBarNavLink>
-          <HiOutlineDocumentReport className='me-2' size={20}/>
-          Reports
+          <RiShakeHandsLine className='me-2' size={20}/>
+          Clients
         </SideBarNavLink>
         <SideBarNavLink>
-          <RiListCheck className='me-2' size={20}/>
-          Customers
+          <HiOutlineDocumentReport className='me-2' size={20}/>
+          Reports
         </SideBarNavLink>
         <SideBarNavLink>
           <RiArchiveLine className='me-2' size={20}/>
           Archive
         </SideBarNavLink>
-        <SideBarNavLink>
+      </SideBarNav>
+      {/* <SideBarSectionTitle>Administration</SideBarSectionTitle> */}
+
+      <SideBarNav className="mt-auto">
+        <SideBarNavLink className="mt-10">
           <RiSettings5Line className='me-2' size={20}/>
           Settings
         </SideBarNavLink>
@@ -58,7 +62,6 @@ function SideBar() {
           Log out
         </SideBarNavLink>
       </SideBarNav>
-      {/* <SideBarSectionTitle>Administration</SideBarSectionTitle> */}
     </aside>
   )
 }

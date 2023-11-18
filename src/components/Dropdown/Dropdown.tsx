@@ -1,22 +1,29 @@
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { RiArrowDownSLine } from "react-icons/ri";
-import { ChildProp } from "../../utils/types";
+import { DropdownProps } from "../../utils/types";
 
-function Dropdown({ children }: ChildProp) {
+function Dropdown({
+  children,
+  triggerClassName,
+  menuClassName,
+  trigger,
+}: DropdownProps) {
   return (
     <DropdownMenu.Root>
       <DropdownMenu.Trigger asChild>
-        <button className="bg-blue-600 hover:bg-blue-500 active:hover:bg-blue-500 text-white px-2 py-1 rounded group-first:rounded-full shadow-md font-medium flex items-center" >
+        <button
+          className={`font-medium flex items-center ${triggerClassName||''}`}
+        >
+          {trigger}
           <RiArrowDownSLine />
         </button>
       </DropdownMenu.Trigger>
 
       <DropdownMenu.Portal>
-        <DropdownMenu.Content 
-          className="min-w-[220px] bg-white rounded-md p-[5px] shadow-[0px_10px_38px_-10px_rgba(22,_23,_24,_0.35),_0px_10px_20px_-15px_rgba(22,_23,_24,_0.2)] will-change-[opacity,transform] data-[side=top]:animate-slideDownAndFade data-[side=right]:animate-slideLeftAndFade data-[side=bottom]:animate-slideUpAndFade data-[side=left]:animate-slideRightAndFade"
+        <DropdownMenu.Content
+          className={`min-w-[220px] bg-white rounded-md p-[5px] shadow-lg will-change-[opacity,transform] data-[side=top]:animate-slideDownAndFade data-[side=right]:animate-slideLeftAndFade data-[side=bottom]:animate-slideUpAndFade data-[side=left]:animate-slideRightAndFade ${menuClassName||''}`}
           sideOffset={5}
         >
-
           {children}
           <DropdownMenu.Arrow className="fill-white" />
         </DropdownMenu.Content>
