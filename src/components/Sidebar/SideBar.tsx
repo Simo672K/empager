@@ -1,21 +1,31 @@
 import SideBarNav from "./SideBarNav"
 import SideBarNavLink from "./SideBarNavLink"
 import SideBarSectionTitle from "./SideBarSectionTitle"
-import { RiLayoutLeftLine, RiSettings5Line, RiLogoutBoxRLine, RiTimerLine, RiListCheck, RiArchiveLine } from 'react-icons/ri'
+import { RiLayoutLeftLine, RiSettings5Line, RiLogoutBoxRLine/*, RiTimerLine*/, RiListCheck, RiArchiveLine,RiAddLine } from 'react-icons/ri'
 import {HiOutlineDocumentReport,HiOutlineUsers} from 'react-icons/hi'
-import { BiReceipt } from 'react-icons/bi'
+import GroupBtn from "../Button/GroupBtn"
+import Button from "../Button/Button"
+import SidebarDropdown from "./SidebarDropdown"
+// import { BiReceipt } from 'react-icons/bi'
 
 function SideBar() {
   return (
-    <aside className="basis-2/12 bg-[#F0F0F0] px-8 py-4">
+    <aside className="max-w-md bg-[#F0F0F0] px-8 py-4">
       <h2 className="text-xl font-bold">Empager</h2>
+      <GroupBtn className="mt-8">
+        <Button variant="primary">
+          <RiAddLine className='me-1' size={20}/>
+          Create New
+        </Button>
+        <SidebarDropdown/>
+      </GroupBtn>
       <SideBarSectionTitle>Workspace</SideBarSectionTitle>
       <SideBarNav>
-        <SideBarNavLink>
+        {/* <SideBarNavLink>
           <BiReceipt className='me-2' size={20}/>
           Overview
-        </SideBarNavLink>
-        <SideBarNavLink>
+        </SideBarNavLink> */}
+        <SideBarNavLink active>
           <RiLayoutLeftLine className='me-2' size={20}/>
           Dashboard
         </SideBarNavLink>
@@ -23,10 +33,10 @@ function SideBar() {
           <HiOutlineUsers className='me-2' size={20}/>
           Employees
         </SideBarNavLink>
-        <SideBarNavLink>
+        {/* <SideBarNavLink>
           <RiTimerLine className='me-2' size={20}/>
-          Time
-        </SideBarNavLink>
+          My Time
+        </SideBarNavLink> */}
         <SideBarNavLink>
           <HiOutlineDocumentReport className='me-2' size={20}/>
           Reports
@@ -48,7 +58,7 @@ function SideBar() {
           Log out
         </SideBarNavLink>
       </SideBarNav>
-      <SideBarSectionTitle>Administration</SideBarSectionTitle>
+      {/* <SideBarSectionTitle>Administration</SideBarSectionTitle> */}
     </aside>
   )
 }

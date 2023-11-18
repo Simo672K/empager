@@ -4,7 +4,7 @@ function Template({children}: {children: React.ReactNode}) {
   return (
     <div className="w-full h-full flex">
       <SideBar/>
-      <main className="basis-8/12">
+      <main className="grow">
         {children}
       </main>
     </div>
