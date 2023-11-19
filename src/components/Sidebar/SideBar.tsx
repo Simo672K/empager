@@ -1,7 +1,7 @@
 import SideBarNav from "./SideBarNav"
 import SideBarNavLink from "./SideBarNavLink"
 import SideBarSectionTitle from "./SideBarSectionTitle"
-import { RiLayoutLeftLine, RiSettings5Line, RiLogoutBoxRLine/*, RiTimerLine*/, RiShakeHandsLine, RiArchiveLine,RiAddLine } from 'react-icons/ri'
+import { RiLayoutLeftLine, RiSettings5Line, RiLogoutBoxRLine/*, RiTimerLine*/, RiShakeHandsLine, RiArchiveLine,RiAddLine, RiBillLine } from 'react-icons/ri'
 import {HiOutlineDocumentReport,HiOutlineUsers} from 'react-icons/hi'
 import GroupBtn from "../Button/GroupBtn"
 import Button from "../Button/Button"
@@ -39,7 +39,11 @@ function SideBar() {
         </SideBarNavLink> */}
         <SideBarNavLink>
           <RiShakeHandsLine className='me-2' size={20}/>
-          Clients
+          Customers
+        </SideBarNavLink>
+        <SideBarNavLink>
+          <RiBillLine className='me-2' size={20}/>
+          Expenses
         </SideBarNavLink>
         <SideBarNavLink>
           <HiOutlineDocumentReport className='me-2' size={20}/>

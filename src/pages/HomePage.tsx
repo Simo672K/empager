@@ -1,6 +1,10 @@
+import HPCardsSection from "../components/Section/HPCardsSection";
+
 function HomePage() {
   return (
-    <div>HomePage</div>
-  )
+    <>
+      <HPCardsSection/>
+    </>
+  );
 }
-export default HomePage
+export default HomePage;

@@ -1,5 +1,5 @@
 interface ChildProps {
-  children: React.ReactNode | undefined
+  children?: React.ReactNode
 }
 
 interface ClassNameProps{
