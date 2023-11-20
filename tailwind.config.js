@@ -36,6 +36,9 @@ export default {
         slideUpAndFade: 'slideUpAndFade 400ms cubic-bezier(0.16, 1, 0.3, 1)',
         slideRightAndFade: 'slideRightAndFade 400ms cubic-bezier(0.16, 1, 0.3, 1)',
       },
+      backgroundImage: {
+        BCItemArrow: "url(assets/icons/arrow.svg)"
+      }
     },
   },
   plugins: [],
