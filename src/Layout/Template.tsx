@@ -1,6 +1,7 @@
 import Breadcrumb from "../components/Breadcrumb/Breadcrumb"
 import BreadcrumbItem from "../components/Breadcrumb/BreadcrumbItem"
 import SideBar from "../components/Sidebar/SideBar"
+import PageTitle from "../components/Title/PageTitle"
 import Topbar from "../components/Topbar/Topbar"
 
 function Template({children}: {children: React.ReactNode}) {
@@ -15,6 +16,7 @@ function Template({children}: {children: React.ReactNode}) {
             <BreadcrumbItem>Page 1</BreadcrumbItem>
             <BreadcrumbItem active>current</BreadcrumbItem>
           </Breadcrumb>
+          <PageTitle title="Dashboard" subtitle="Overview of your business"/>
           {children}
         </div>
       </main>
