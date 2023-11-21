@@ -8,7 +8,7 @@ import {
 import OverviewCard from "../Card/OverviewCard";
 function HPCardsSection() {
   return (
-    <section className="grid grid-cols-5 gap-4">
+    <section className="grid grid-cols-5 gap-4 mb-8">
       <OverviewCard
         icon={<Profile2User size="30" color="#3b82f6" variant="Bulk" />}
         title="Employees"
