@@ -1,3 +1,7 @@
+interface DGSettings {
+  selectAll?:boolean
+}
+
 interface DGHeader {
   field: string; 
   headerName: string; 
@@ -7,7 +11,8 @@ interface DGHeader {
 
 interface DGProps {
   header: Array<DGHeader>;
-  rowsContent: Array<object>;
+  rowsContent: Array<any>;
 }
 
-export type {DGHeader, DGProps}
+
+export type {DGHeader, DGProps, DGSettings}

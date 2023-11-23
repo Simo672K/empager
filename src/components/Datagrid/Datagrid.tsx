@@ -1,30 +1,38 @@
+import { useState } from "react";
 import DatagridBody from "./DatagridBody";
 import DatagridCol from "./DatagridCol";
 import DatagridHeader from "./DatagridHeader";
 import DatagridRow from "./DatagridRow";
-import { DGProps } from "./types";
+import { DGProps, DGSettings } from "./types";
+import DatagridContext from "./DatagridSettings";
 
-
-function Datagrid({header, rowsContent}: DGProps) {
+function Datagrid({ header, rowsContent }: DGProps) {
+  const [dgSettings, setDgSettings] = useState<DGSettings>({
+    selectAll: false,
+  });
 
   return (
     <div>
-      <DatagridHeader>
-        {header.map((cell, id)=>
-            <DatagridCol key={id}>{cell.headerName}</DatagridCol>
-          )}
-      </DatagridHeader>
-      <DatagridBody>
-        {rowsContent.map((content, id)=>
-          <DatagridRow key={id}>
-            {
-              header.map((cell, cellId)=>
+      <DatagridContext.Provider value={dgSettings}>
+        <DatagridHeader
+          settings={
+            setDgSettings as React.Dispatch<React.SetStateAction<DGSettings>>
+          }
+        >
+          {header.map((cell, cellId) => (
+            <DatagridCol key={cellId}>{cell.headerName}</DatagridCol>
+          ))}
+        </DatagridHeader>
+        <DatagridBody>
+          {rowsContent.map((content, id) => (
+            <DatagridRow isChecked={dgSettings.selectAll!} key={id}>
+              {header.map((cell, cellId) => (
                 <DatagridCol key={cellId}>{content[cell.field]}</DatagridCol>
-              )
-            }
-          </DatagridRow>
-          )}
-      </DatagridBody>
+              ))}
+            </DatagridRow>
+          ))}
+        </DatagridBody>
+      </DatagridContext.Provider>
     </div>
   );
 }

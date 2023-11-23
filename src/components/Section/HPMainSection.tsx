@@ -21,7 +21,7 @@ function HPMainSection() {
   return (
     <section className="flex gap-4">
       <div className="basis-3/5">
-        <Card>
+        <Card className="h-96">
           <Title className="font-medium" variant="h4">Employees List</Title>
           <Datagrid header={header} rowsContent={rowsContent}/>
         </Card>
